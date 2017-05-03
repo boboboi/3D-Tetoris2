@@ -22,7 +22,7 @@ public class MainCamera : MonoBehaviour {
 	public static void Rotate() {
 
 		degree = -90*i;
-		iTween.RotateTo (gobject, iTween.Hash ("y", degree, "time", 1));
+		iTween.RotateTo (gobject, iTween.Hash ("y", degree, "time", 2));
 
 		switch (i) {
 		case 0:

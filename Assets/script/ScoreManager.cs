@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour {
 			score += 100;
 			break;
 		case 4:
-			score += 1000;
+			score += 200;
 			break;
 		default:
 			break;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class Group : MonoBehaviour {
 	
@@ -152,7 +153,7 @@ public class Group : MonoBehaviour {
 
 		// Default position not valid? Then it's game over
 		if (!isValidGridPos()) {
-			Debug.Log("GAME OVER");
+			SceneManager.LoadScene ("gameover");
 			Destroy(gameObject);
 		}		
 	}
