@@ -47,17 +47,21 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\script\FallManager.cs" />
+     <Compile Include="Assets\script\FromTitletoNormal.cs" />
      <Compile Include="Assets\script\Grid.cs" />
      <Compile Include="Assets\script\Group.cs" />
      <Compile Include="Assets\script\KeyManage.cs" />
      <Compile Include="Assets\script\LevelManager.cs" />
      <Compile Include="Assets\script\MainCamera.cs" />
+     <Compile Include="Assets\script\MainCameraTitle.cs" />
      <Compile Include="Assets\script\NextBlock.cs" />
      <Compile Include="Assets\script\ScoreManager.cs" />
      <Compile Include="Assets\script\Spawner.cs" />
      <Compile Include="Assets\script\SpawnerNextGroup.cs" />
      <Compile Include="Assets\script\SwitchCamera.cs" />
+     <Compile Include="Assets\script\TitleRotate.cs" />
      <Compile Include="Assets\script\TitleScene.cs" />
+     <Compile Include="Assets\script\touchManage.cs" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

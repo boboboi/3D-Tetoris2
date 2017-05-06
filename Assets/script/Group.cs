@@ -162,7 +162,7 @@ public class Group : MonoBehaviour {
 	void Update () {
 
 		// Move Left
-		if (Input.GetKeyDown (KeyCode.LeftArrow)) { //GetKeyDown
+		if (Input.GetKeyDown (KeyCode.LeftArrow) || (touchManage.swipeL==true) ) { //GetKeyDown
 			// Modify position
 			transform.position += moveVec3 ("LeftArrow");
 
@@ -173,9 +173,11 @@ public class Group : MonoBehaviour {
 			else
 				// Its not valid. revert.
 				transform.position -= moveVec3 ("LeftArrow");
+
+			GameObject.FindGameObjectWithTag ("TouchManager").GetComponent<touchManage> ().reset ();
 		}
 		// Move Right
-		else if (Input.GetKeyDown (KeyCode.RightArrow)) {
+		else if (Input.GetKeyDown (KeyCode.RightArrow) || (touchManage.swipeR==true) ) {
 			// Modify position
 			transform.position += moveVec3 ("RightArrow");
 
@@ -186,9 +188,11 @@ public class Group : MonoBehaviour {
 			else
 				// It's not valid. revert.
 				transform.position -= moveVec3 ("RightArrow");
+			
+			GameObject.FindGameObjectWithTag ("TouchManager").GetComponent<touchManage> ().reset ();
 		}
 		// Rotate
-		else if ((Input.GetKeyDown (KeyCode.A)) || (Input.GetKeyDown (KeyCode.S))) {
+		else if ((Input.GetKeyDown (KeyCode.A)) || (Input.GetKeyDown (KeyCode.S)) || (touchManage.touch==true)) {
 
 			if (Input.GetKeyDown (KeyCode.A)) {
 				transform.Rotate (0, 0, 90);
@@ -246,10 +250,12 @@ public class Group : MonoBehaviour {
 					}
 				}
 			}
+
+			GameObject.FindGameObjectWithTag ("TouchManager").GetComponent<touchManage> ().reset ();
 		}
 		// Move Downwards and Fall
 		else if (Input.GetKeyDown (KeyCode.DownArrow) || Input.GetKeyDown (KeyCode.UpArrow) ||
-			FallManager.fallblock()==true ) {
+			FallManager.fallblock()==true || (touchManage.swipeD==true) ) {
 
 			if (Input.GetKeyDown (KeyCode.UpArrow)) {
 				down_count = Grid.h;
@@ -266,6 +272,8 @@ public class Group : MonoBehaviour {
 				if (isValidGridPos ()) {
 					// It's valid. Update grid.
 					updateGrid ((int)transform.position.x, (int)transform.position.z);
+
+					GameObject.FindGameObjectWithTag ("TouchManager").GetComponent<touchManage> ().reset ();
 				} else {
 
 					sound.PlayOneShot (sound.clip);
@@ -287,6 +295,8 @@ public class Group : MonoBehaviour {
 					GameObject.FindGameObjectWithTag ("NextBlock").GetComponent<NextBlock> ().changeNextBlock ();
 
 					Grid.deleteFullRows (); //回転後に消えていたら消す
+
+					GameObject.FindGameObjectWithTag ("TouchManager").GetComponent<touchManage> ().reset ();
 
 					// Disable script
 					enabled = false;

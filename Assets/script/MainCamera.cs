@@ -6,7 +6,6 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour {
 
 	private static int degree = 0;
-	private static int i = 1;
 	public static GameObject gobject;
 
 	public static int current_view = (int)View.A;
@@ -21,35 +20,71 @@ public class MainCamera : MonoBehaviour {
 
 	public static void Rotate() {
 
-		degree = -90*i;
-		iTween.RotateTo (gobject, iTween.Hash ("y", degree, "time", 2));
-
-		switch (i) {
-		case 0:
-			current_view = (int)View.A;
-			i++;
-			break;
-		case 1:
+		switch (current_view) {
+		case (int)View.A:
+			degree -= 90;
 			current_view = (int)View.B;
-			i++;
 			break;
-		case 2:
+		case (int)View.B:
+			degree -= 90;
 			current_view = (int)View.C;
-			i++;
 			break;
-		case 3:
+		case (int)View.C:
+			degree -= 90;
 			current_view = (int)View.D;
-			i = 0;
+			break;
+		case (int)View.D:
+			degree = 0;
+			current_view = (int)View.A;
 			break;
 		default:
 			Debug.Log ("Error Rotate");
 			break;
 		}
 
+		iTween.RotateTo (gobject, iTween.Hash ("y", degree, "time", 2));
+
+	}
+
+	public static void RotateReverse() {
+
+		switch (current_view) {
+		case (int)View.A:
+			degree += 90;
+			current_view = (int)View.D;
+			break;
+		case (int)View.B:
+			degree = 0;
+			current_view = (int)View.A;
+			break;
+		case (int)View.C:
+			degree += 90;
+			current_view = (int)View.B;
+			break;
+		case (int)View.D:
+			degree += 90;
+			current_view = (int)View.C;
+			break;
+		default:
+			Debug.Log ("Error Rotate");
+			break;
+		}
+
+		iTween.RotateTo (gobject, iTween.Hash ("y", degree, "time", 2));
+	}
+
+	public static void RotateNG() {
+
+		degree -= -45;
+		iTween.RotateTo (gobject, iTween.Hash ("y", degree, "time", 2));
+		degree = -45;
+		iTween.RotateTo (gobject, iTween.Hash ("y", degree, "time", 2));
+
 	}
 
 	// Use this for initialization
 	void Start () {
+		current_view = (int)View.A;
 		gobject = GameObject.Find ("CameraRotateObject");
 	}
 	
