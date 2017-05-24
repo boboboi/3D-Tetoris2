@@ -6,9 +6,12 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour {
 
 	private static int degree = 0;
+
 	public static GameObject gobject;
 
 	public static int current_view = (int)View.A;
+
+	public bool finish_flg = false;
 
 	public enum View{
 		A,
@@ -73,23 +76,21 @@ public class MainCamera : MonoBehaviour {
 		iTween.RotateTo (gobject, iTween.Hash ("y", degree, "time", 2));
 	}
 
-	public static void RotateNG() {
-
-		degree -= -45;
-		iTween.RotateTo (gobject, iTween.Hash ("y", degree, "time", 2));
-		degree = -45;
-		iTween.RotateTo (gobject, iTween.Hash ("y", degree, "time", 2));
-
+	public void finishRolling(){
+		finish_flg = true;
 	}
 
 	// Use this for initialization
 	void Start () {
 		current_view = (int)View.A;
+		degree = 0;
 		gobject = GameObject.Find ("CameraRotateObject");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (finish_flg == true) {
+			this.gameObject.transform.Rotate (0, 1.0f, 0);
+		}
 	}
 }

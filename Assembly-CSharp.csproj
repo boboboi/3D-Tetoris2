@@ -46,22 +46,51 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\script\DeleteBlock.cs" />
+     <Compile Include="Assets\script\DispHighScore.cs" />
+     <Compile Include="Assets\script\Fade\Scripts\Fade.cs" />
+     <Compile Include="Assets\script\Fade\Scripts\FadeImage.cs" />
+     <Compile Include="Assets\script\Fade\Scripts\FadeUI.cs" />
+     <Compile Include="Assets\script\Fade\Scripts\IFade.cs" />
+     <Compile Include="Assets\script\FadeManager.cs" />
      <Compile Include="Assets\script\FallManager.cs" />
-     <Compile Include="Assets\script\FromTitletoNormal.cs" />
      <Compile Include="Assets\script\Grid.cs" />
      <Compile Include="Assets\script\Group.cs" />
+     <Compile Include="Assets\script\HighScore.cs" />
      <Compile Include="Assets\script\KeyManage.cs" />
+     <Compile Include="Assets\script\LastScore.cs" />
      <Compile Include="Assets\script\LevelManager.cs" />
      <Compile Include="Assets\script\MainCamera.cs" />
-     <Compile Include="Assets\script\MainCameraTitle.cs" />
+     <Compile Include="Assets\script\MoveBand.cs" />
+     <Compile Include="Assets\script\MoveBottun.cs" />
      <Compile Include="Assets\script\NextBlock.cs" />
+     <Compile Include="Assets\script\Particle_cube.cs" />
+     <Compile Include="Assets\script\PushContinue.cs" />
+     <Compile Include="Assets\script\PushMenu.cs" />
+     <Compile Include="Assets\script\Ready_go.cs" />
+     <Compile Include="Assets\script\Result_Level.cs" />
+     <Compile Include="Assets\script\Result_Score.cs" />
      <Compile Include="Assets\script\ScoreManager.cs" />
      <Compile Include="Assets\script\Spawner.cs" />
      <Compile Include="Assets\script\SpawnerNextGroup.cs" />
      <Compile Include="Assets\script\SwitchCamera.cs" />
-     <Compile Include="Assets\script\TitleRotate.cs" />
-     <Compile Include="Assets\script\TitleScene.cs" />
+     <Compile Include="Assets\script\title\FromTitletoNormal.cs" />
+     <Compile Include="Assets\script\title\MainCameraTitle.cs" />
+     <Compile Include="Assets\script\title\TitleRotate.cs" />
+     <Compile Include="Assets\script\title\touchManagerTitle.cs" />
      <Compile Include="Assets\script\touchManage.cs" />
+     <Compile Include="Assets\terasurware\FadeCamera\AutoScaleQuad.cs" />
+     <Compile Include="Assets\terasurware\FadeCamera\FadeCamera.cs" />
+     <Compile Include="Assets\terasurware\FadeCamera\ScreenScale.cs" />
+     <Compile Include="Assets\terasurware\Utility\NotificationObject.cs" />
+     <Compile Include="Assets\terasurware\Utility\ObjectPool.cs" />
+     <Compile Include="Assets\terasurware\Utility\PersistentAmongPlayModeAttribute.cs" />
+     <Compile Include="Assets\terasurware\Utility\SingletonMonoBehaviour.cs" />
+     <None Include="Assets\script\Fade\Materials\UI-Fade-Alpha.shader" />
+     <None Include="Assets\script\Fade\Materials\UI-Fade-Cutout.shader" />
+     <None Include="Assets\terasurware\FadeCamera\Shader\FadecameraMask2.shader" />
+     <None Include="Assets\terasurware\FadeCamera\Shader\FadecameraMask1.shader" />
+     <None Include="Assets\script\Fade\Materials\UI-Mask.shader" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -13,6 +13,7 @@ public class SpawnerNextGroup : MonoBehaviour {
 	public void spawnNextBlock() {
 		// Random Index
 		int i = Random.Range(0, nextgroups.Length);
+		//int i = 0;
 		int x, y, z;
 		Quaternion rotate;
 

@@ -50,6 +50,11 @@
      <Compile Include="Assets\Plugins\Pixelplacement\iTween\Sample\RotateSample.cs" />
      <Compile Include="Assets\Plugins\Pixelplacement\iTween\Sample\SampleInfo.cs" />
      <Compile Include="Assets\Plugins\Pixelplacement\iTween\iTween.cs" />
+     <None Include="Assets\script\Fade\Materials\UI-Fade-Alpha.shader" />
+     <None Include="Assets\script\Fade\Materials\UI-Fade-Cutout.shader" />
+     <None Include="Assets\terasurware\FadeCamera\Shader\FadecameraMask2.shader" />
+     <None Include="Assets\terasurware\FadeCamera\Shader\FadecameraMask1.shader" />
+     <None Include="Assets\script\Fade\Materials\UI-Mask.shader" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

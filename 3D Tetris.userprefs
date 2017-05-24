@@ -1,11 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\MainCameraTitle.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\Spawner.cs">
     <Files>
-      <File FileName="Assets\script\TitleRotate.cs" Line="21" Column="27" />
-      <File FileName="Assets\script\Group.cs" Line="4" Column="1" />
-      <File FileName="Assets\script\MainCameraTitle.cs" Line="18" Column="3" />
-      <File FileName="Assets\script\FromTitletoNormal.cs" Line="16" Column="40" />
+      <File FileName="Assets\script\Group.cs" Line="29" Column="31" />
+      <File FileName="Assets\script\Grid.cs" Line="39" Column="6" />
+      <File FileName="Assets\script\Spawner.cs" Line="57" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

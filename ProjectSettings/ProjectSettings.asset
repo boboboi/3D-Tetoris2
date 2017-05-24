@@ -460,8 +460,13 @@ PlayerSettings:
   XboxOneAllowedProductIds: []
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudServicesEnabled:
+    Build: 0
+    Collab: 0
+    ErrorHub: 0
+    Hub: 0
+    UNet: 1
+  cloudProjectId: 5a563f4b-fe5e-4e76-91f4-f45a6c37590b
+  projectName: 3D Tetris
+  organizationId: boboi
   cloudEnabled: 0

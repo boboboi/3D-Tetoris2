@@ -8,6 +8,16 @@ TagManager:
   - SpawnerNextGroup
   - NextBlock
   - TouchManager
+  - Level
+  - Score
+  - readygo_bg
+  - readygo_ready
+  - CameraRotateObject
+  - FadeCanvas
+  - FadePanel
+  - HighScoreText
+  - GameOver/Disp
+  - GameOver/Bottun
   layers:
   - Default
   - TransparentFX

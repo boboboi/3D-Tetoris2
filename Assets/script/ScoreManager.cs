@@ -30,15 +30,19 @@ public class ScoreManager : MonoBehaviour {
 		delete_line = 0;
 	}
 
+	public static int getScore() {
+		return score;
+	}
+
 	// Use this for initialization
 	void Start () {
-		text = GetComponent<Text> ();
+		text = GameObject.FindGameObjectWithTag ("Score").GetComponent<Text> ();
 		score = 0;
 		delete_line = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = ":" + score;
+		text.text = "Score:" + score;
 	}
 }

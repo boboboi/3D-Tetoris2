@@ -12,7 +12,8 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		text = GetComponent<Text> ();
+		//DontDestroyOnLoad (this.gameObject);
+		text = GameObject.FindGameObjectWithTag ("Level").GetComponent<Text> ();
 		level = 1;		
 	}
 	
@@ -21,6 +22,6 @@ public class LevelManager : MonoBehaviour {
 		level = (ScoreManager.score / 100) + 1;
 		if (level > max)
 			level = max;
-		text.text = ":" + level;
+		text.text = "Level:" + level;
 	}
 }

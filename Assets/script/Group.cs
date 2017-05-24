@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; 
+//using UnityEngine.SceneManagement; 
 
 public class Group : MonoBehaviour {
 	
 	// Time since last gravity tick
 	public static int t = 0;
 	public static int count = 0;
+	//public int count = 0;
 
 	private AudioSource sound;
 
 	private int down_count;
+
+	private static int fall_cnt=0;
 
 	bool isValidGridPos() {        
 		foreach (Transform child in transform) {
@@ -148,12 +151,18 @@ public class Group : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
+		fall_cnt = 0;
 		sound = GetComponent<AudioSource> ();
 
 		// Default position not valid? Then it's game over
 		if (!isValidGridPos()) {
-			SceneManager.LoadScene ("gameover");
+			HighScore.SaveHighScore (ScoreManager.getScore());
+			GameObject.Find ("CameraRotateObject").GetComponent<MainCamera> ().finishRolling ();
+			GameObject.FindGameObjectWithTag ("HighScoreText").GetComponent<DispHighScore> ().WriteHighScore ();
+			GameObject.FindGameObjectWithTag ("GameOver/Disp").GetComponent<MoveBand> ().MoveBandRight();
+			GameObject.FindGameObjectWithTag ("GameOver/Bottun").GetComponent<MoveBottun> ().MoveBottunUP();
+			//SceneManager.LoadScene ("gameover");
 			Destroy(gameObject);
 		}		
 	}
@@ -276,32 +285,42 @@ public class Group : MonoBehaviour {
 					GameObject.FindGameObjectWithTag ("TouchManager").GetComponent<touchManage> ().reset ();
 				} else {
 
-					sound.PlayOneShot (sound.clip);
-
 					// It's not valid. revert.
 					transform.position += new Vector3 (0, 1, 0);
 
-					// Clear filled horizontal lines
-					Grid.deleteFullRows ();
+					fall_cnt++;
 
-					count++;
-					if (count == 7) {
-						MainCamera.Rotate ();
-						count = 0;
+					if (fall_cnt == 2) {
+
+						sound.PlayOneShot (sound.clip);
+
+						// Clear filled horizontal lines
+						Grid.deleteFullRows ();
+
+						count++;
+						if (count == 7) {
+							MainCamera.Rotate ();
+							count = 0;
+						}
+
+						// Spawn next Group
+						GameObject.FindGameObjectWithTag ("Spawner").GetComponent<Spawner> ().spawnNext (NextBlock.nextGroupIdx);
+						//GameObject.FindGameObjectWithTag ("Spawner").GetComponent<Spawner> ().spawnNext (0);
+						GameObject.FindGameObjectWithTag ("NextBlock").GetComponent<NextBlock> ().changeNextBlock ();
+
+						Grid.deleteFullRows (); //回転後に消えていたら消す
+
+						GameObject.FindGameObjectWithTag ("TouchManager").GetComponent<touchManage> ().reset ();
+
+						fall_cnt = 0;
+
+						// Disable script
+						enabled = false;
+
+						break;
+					} else {
+						//無処理
 					}
-
-					// Spawn next Group
-					GameObject.FindGameObjectWithTag ("Spawner").GetComponent<Spawner> ().spawnNext (NextBlock.nextGroupIdx);
-					GameObject.FindGameObjectWithTag ("NextBlock").GetComponent<NextBlock> ().changeNextBlock ();
-
-					Grid.deleteFullRows (); //回転後に消えていたら消す
-
-					GameObject.FindGameObjectWithTag ("TouchManager").GetComponent<touchManage> ().reset ();
-
-					// Disable script
-					enabled = false;
-
-					break;
 				}
 
 				FallManager.setLastfall ();
