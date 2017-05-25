@@ -161,7 +161,7 @@ public class Group : MonoBehaviour {
 			GameObject.Find ("CameraRotateObject").GetComponent<MainCamera> ().finishRolling ();
 			GameObject.FindGameObjectWithTag ("HighScoreText").GetComponent<DispHighScore> ().WriteHighScore ();
 			GameObject.FindGameObjectWithTag ("GameOver/Disp").GetComponent<MoveBand> ().MoveBandRight();
-			GameObject.FindGameObjectWithTag ("GameOver/Bottun").GetComponent<MoveBottun> ().MoveBottunUP();
+			//GameObject.FindGameObjectWithTag ("GameOver/Bottun").GetComponent<MoveBottun> ().MoveBottunUP();
 			//SceneManager.LoadScene ("gameover");
 			Destroy(gameObject);
 		}		

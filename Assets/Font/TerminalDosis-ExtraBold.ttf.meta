@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: c816c72711cdbef4c8ca785b75dfaf05
+timeCreated: 1495717097
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Terminal Dosis
+  fontNames:
+  - Terminal Dosis
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

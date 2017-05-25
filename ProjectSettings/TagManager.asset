@@ -18,6 +18,8 @@ TagManager:
   - HighScoreText
   - GameOver/Disp
   - GameOver/Bottun
+  - ContinueText
+  - MenuText
   layers:
   - Default
   - TransparentFX
