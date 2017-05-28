@@ -14,25 +14,30 @@ public class Ready_go : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gameobject_bg    = GameObject.FindGameObjectWithTag ("readygo_bg");
-		gameobject_ready = GameObject.FindGameObjectWithTag ("readygo_ready");
+		//gameobject_bg    = GameObject.FindGameObjectWithTag ("readygo_bg");
+		//gameobject_ready = GameObject.FindGameObjectWithTag ("readygo_ready");
 		gameobject_go    = this.gameObject;
-		text = GetComponent<Text> ();
+		//text = GetComponent<Text> ();
 		last_time = Time.realtimeSinceStartup;
-		Group.count = 0;
+		//Group.count = 0;
 		GameObject.FindGameObjectWithTag ("FadePanel").GetComponent<FadeManager> ().setFadeInFlg(true);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//if( (Time.realtimeSinceStartup-last_time) > 2 ){
+		//	text.text = "GO!!";
+		//}
+
+		// フェードイン完了していたら、
+
+		// key入力
 		if( (Time.realtimeSinceStartup-last_time) > 2 ){
-			text.text = "GO!!";
-		}
-		if( (Time.realtimeSinceStartup-last_time) > 3.5 ){
+		//if( GameObject.FindGameObjectWithTag ("FadePanel").GetComponent<FadeManager> ().IsFinishFadeIn() ){
 			// Spawn next Group
-			GameObject.FindGameObjectWithTag ("Spawner").GetComponent<Spawner> ().spawnNext (Random.Range(0, 7));
-			Destroy (gameobject_bg);
-			Destroy (gameobject_ready);
+			//GameObject.FindGameObjectWithTag ("Spawner").GetComponent<Spawner> ().spawnNext (Random.Range(0, 7));
+			//Destroy (gameobject_bg);
+			//Destroy (gameobject_ready);
 			Destroy (gameobject_go);
 		}
 	}

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;     //UIを使用可能にする
 public class FadeManager : MonoBehaviour {
 
-	public float speed = 0.01f;	//透明化の速さ
+	float speed = 0.03f;	//透明化の速さ
 	float alfa;    				//A値を操作するための変数
 	float red, green, blue;		//RGBを操作するための変数
 	public bool FadeInFlg=false;

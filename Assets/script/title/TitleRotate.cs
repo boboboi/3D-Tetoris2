@@ -6,7 +6,7 @@ public class TitleRotate : MonoBehaviour {
 
 	private const int Stage_Num = 1;
 	private static bool[] stage = {true, true, false};
-	private static int current_stage;
+	public static int current_stage;
 
 	// Use this for initialization
 	void Start () {

@@ -11,14 +11,16 @@ public class FallManager : MonoBehaviour {
 	public static int speed;
 
 	public static bool fallblock() {
-		if ( ((int)(Time.realtimeSinceStartup * 1000) - lastFall) >= speed)
+		//if ( ((int)(Time.realtimeSinceStartup * 1000) - lastFall) >= speed)
+		if ( ((int)(Time.time * 1000) - lastFall) >= speed)
 			return true;
 
 		return false;
 	}
 
 	public static void setLastfall() {
-		lastFall = (int)(Time.realtimeSinceStartup * 1000);
+		//lastFall = (int)(Time.realtimeSinceStartup * 1000);
+		lastFall = (int)(Time.time * 1000);
 	}
 
 	// Use this for initialization

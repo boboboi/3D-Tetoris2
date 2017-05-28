@@ -15,6 +15,6 @@ public class MoveBand : MonoBehaviour {
 	}
 
 	public void MoveBandRight(){
-		iTween.MoveTo (this.gameObject, iTween.Hash ("x", 170, "time", 1));
+		iTween.MoveTo (this.gameObject, iTween.Hash ("x", 200, "time", 1));
 	}
 }
